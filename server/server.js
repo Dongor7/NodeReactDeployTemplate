@@ -13,10 +13,10 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, './build')));
 
-router
+/*router
     .get('/', function(req, res) {
     res.json({ message: 'API Initialized!'});
-});
+});*/
 
 router.route('/')
     .get((req, res) => {

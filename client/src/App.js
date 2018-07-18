@@ -11,9 +11,11 @@ class App extends Component {
         axios
             .get('/')
             .then(res => {
-                this.setState({users: res.data});
-                console.log('Data', res.data);
+                this.setState({users: res.data.users});
+                console.log('Data', res.data.users);
             });
+
+        console.log('Axios');
     };
 
     componentDidMount() {
@@ -21,11 +23,14 @@ class App extends Component {
     }
 
     render() {
+
+        console.log('Render: ', this.state);
+
         return (
             <div className="App">
                 <ul>
                     {
-                        this.state.users.map((user) => {
+                         this.state.users.map((user) => {
                             return (
                                 <li>${user}</li>
                             )
